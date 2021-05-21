@@ -14,10 +14,10 @@ const submitData=( name, email )=> {
     .then( r  =>{
       return r.json()
     } )
-    .then( d=>  {
+    .then( d=>  
       document.body.innerHTML = d[ "id" ]
-    } )
-    .catch( (e  {
+     )
+    .catch( e => 
       document.body.innerHTML = error.message
-    } )
+     )
 }
