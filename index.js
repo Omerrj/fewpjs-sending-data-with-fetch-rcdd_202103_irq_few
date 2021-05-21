@@ -1,6 +1,6 @@
 // Add your code here
-const submitData=( name, email )=> {
-  return fetch( 'http://localhost:3000/users', {
+const submitData=( name, email )=> 
+  fetch( 'http://localhost:3000/users', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -11,13 +11,6 @@ const submitData=( name, email )=> {
         email
       } )
     } )
-    .then( r  =>{
-      return r.json()
-    } )
-    .then( d=>  
-      document.body.innerHTML = d[ "id" ]
-     )
-    .catch( e => 
-      document.body.innerHTML = error.message
-     )
-}
+    .then( r  => r.json())
+    .then( d=>document.body.innerHTML = d[ "id" ])
+    .catch( e =>document.body.innerHTML = e.message)
